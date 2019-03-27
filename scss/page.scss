@@ -4,3 +4,46 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    min-height: 100vh;
+    background: #f6f6f6;
+}
+
+$pageWidth: 1200px;
+$pageCentered: true;
+
+
+@mixin page {
+    width: $pageWidth;
+    @if $pageCentered == true {
+        margin: 0 auto;
+    }
+}
+
+.page {
+    position: relative;
+    @include page;
+
+
+    &-items {
+
+    }
+
+    &-item {
+
+        .card {
+
+        }
+    }
+
+    &-numbers {
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+        }
+    }
+}
