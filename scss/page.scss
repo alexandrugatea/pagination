@@ -24,6 +24,7 @@ $pageCentered: true;
 
 .page {
     position: relative;
+    overflow: hidden;
     @include page;
 
 
@@ -89,6 +90,7 @@ $pageCentered: true;
 
 
     &-number {
+        margin-left: -1px;
 
         a {
             width: 40px;
@@ -99,7 +101,6 @@ $pageCentered: true;
             text-decoration: none;
             color: inherit;
             border: 1px solid #ccc;
-            border-left: none;
             background: #fff;
         }
 
@@ -107,6 +108,7 @@ $pageCentered: true;
 
             a {
                 background: #ffc3ee;
+                pointer-events: none;
             }
         }
     }

@@ -11,6 +11,7 @@ body {
 
 .page {
   position: relative;
+  overflow: hidden;
   width: 1200px;
   margin: 0 auto;
 }
@@ -64,6 +65,9 @@ body {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
+.page-number {
+  margin-left: -1px;
+}
 .page-number a {
   width: 40px;
   height: 40px;
@@ -73,9 +77,9 @@ body {
   text-decoration: none;
   color: inherit;
   border: 1px solid #ccc;
-  border-left: none;
   background: #fff;
 }
 .page-number.active a {
   background: #ffc3ee;
+  pointer-events: none;
 }
