@@ -16,7 +16,8 @@ $pageCentered: true;
 
 @mixin page {
     width: $pageWidth;
-    @if $pageCentered == true {
+
+    @if $pageCentered==true {
         margin: 0 auto;
     }
 }
@@ -27,23 +28,86 @@ $pageCentered: true;
 
 
     &-items {
-
+        margin: 50px 0;
     }
 
     &-item {
+        margin-bottom: 15px;
+        
+        &:not(.animated) {
+            opacity: 0;
+        }
 
         .card {
+            background: #fff;
+            box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
 
+            .card-content {
+                padding: 15px;
+            }
         }
     }
 
     &-numbers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-        ul {
+        &-list {
             display: flex;
             justify-content: center;
             align-items: center;
             list-style-type: none;
+        }
+
+        [data-target="previous"],
+        [data-target="next"] {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: none;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            font-size: 20px;
+        }
+
+        [data-target="next"] {
+            border-left: none;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        [data-target="previous"] {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+    }
+
+
+    &-number {
+
+        a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #ccc;
+            border-left: none;
+            background: #fff;
+        }
+
+        &.active {
+
+            a {
+                background: #ffc3ee;
+            }
         }
     }
 }
