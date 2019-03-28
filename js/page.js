@@ -21,7 +21,8 @@ jQuery(document).ready(function($){
     itemTrigger.on('click', function(e) {
         e.preventDefault();
         itemToAnimate.removeClass(animationLeftIn).removeClass(animationLeftIn);
-        var direction = $(this).attr('href').split('=')[1];
+        var targetHref = $(this).attr('href');
+        var direction = getURLParameter(targetHref, 'direction');
         var toGo = $(this).attr('href');
         if (direction == 'left') {
             animateOut(itemToAnimate, animationRightOut);
@@ -69,6 +70,10 @@ jQuery(document).ready(function($){
     
     function animateOut(element, toAdd) {
         element.addClass(toAdd);
+    }
+
+    function getURLParameter(url, name) {
+        return (RegExp(name + '=' + '(.+?)(&|$)').exec(url)||[,null])[1];
     }
 
 });
